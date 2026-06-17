@@ -1,4 +1,4 @@
-name: SEED
+name: Naiin
 
 on:
   workflow_dispatch:
@@ -16,9 +16,9 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - run: python bookminer.py
+      - run: python naiinminer.py
 
       - uses: actions/upload-artifact@v4
         with:
-          name: se-ed-books
-          path: se_ed_books.csv
+          name: naiin-books
+          path: naiin_books.csv
