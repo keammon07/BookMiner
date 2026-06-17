@@ -1,4 +1,3 @@
-```python
 import requests
 import pandas as pd
 import time
@@ -83,4 +82,3 @@ df.to_csv(
 )
 
 print(f"Done! {len(df)} books saved.")
-```
