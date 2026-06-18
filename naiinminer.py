@@ -9,12 +9,12 @@ HEADERS = {
 }
 
 def get_book_extra(book_url):
-try:
-html = requests.get(
-book_url,
-headers=HEADERS,
-timeout=30
-).text
+    try:
+        html = requests.get(
+        book_url,
+        headers=HEADERS,
+        timeout=30
+        ).text
 
     soup = BeautifulSoup(
         html,
