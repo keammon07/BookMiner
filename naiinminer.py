@@ -9,17 +9,14 @@ HEADERS = {
 }
 
 def get_book_extra(book_url):
-    try:
-        html = requests.get(
-        book_url,
-        headers=HEADERS,
-        timeout=30
-        ).text
+try:
+html = requests.get(
+book_url,
+headers=HEADERS,
+timeout=30
+).text
 
-    soup = BeautifulSoup(
-        html,
-        "html.parser"
-    )
+    soup = BeautifulSoup(html, "html.parser")
 
     isbn = ""
     release_date = ""
@@ -30,10 +27,7 @@ def get_book_extra(book_url):
     )
 
     if isbn_tag:
-        isbn = isbn_tag.get(
-            "content",
-            ""
-        )
+        isbn = isbn_tag.get("content", "")
 
     release_tag = soup.find(
         "meta",
@@ -84,9 +78,6 @@ try:
     )
 
     if not product_list:
-        print(
-            f"No products on page {page}"
-        )
         continue
 
     items_attr = product_list.get(
@@ -135,8 +126,7 @@ book_id = product.get(
 )
 
 book_url = (
-    f"https://www.naiin.com/"
-    f"product/detail/{book_id}"
+    f"https://www.naiin.com/product/detail/{book_id}"
 )
 
 isbn, release_date = get_book_extra(
